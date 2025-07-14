@@ -1,0 +1,54 @@
+---
+import Button from "../common/Button.astro";
+import Card from "../common/Card.astro";
+---
+
+<section id="home" class="min-h-screen flex items-center justify-center px-4">
+  <Card shape="6">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-10 p-6">
+      
+      <div class="text-white text-left md:w-1/2">
+        <div class="flex items-center gap-4 mb-4">
+          <h1 class="text-4xl md:text-5xl font-extrabold text-[var(--color-neo-highlight)]">
+            Raúl Andrés De la Rosa Gamboa
+          </h1>
+          <span class="text-2xl md:text-3xl font-bold text-[var(--color-neo-accent)]" style="font-family: var(--font-barcode);">
+            DESARROLADOR WEB Y MOVIL JR. FULL STACK
+          </span>
+        </div>
+
+        <p class="text-justify leading-relaxed text-lg mb-6" style="font-family: var(--font-body);">
+          Con un año en la creación de sitios web atractivos y funcionales, especializado en sistemas robustos con
+          <strong class="text-[var(--color-neo-accent)]" style="font-family: var(--font-body);">Laravel</strong>
+          y apps móviles modernas con
+          <strong class="text-[var(--color-neo-accent)]" style="font-family: var(--font-body);">Flutter</strong>.
+        </p>
+
+        <Button label="Ver currículum" href="/cv.pdf" target="_blank" color="dark" cornerFold="bottom-left" />
+      </div>
+
+      <div class="md:w-1/2 flex justify-center">
+        <img
+          src="/images/yo.jpg"
+          alt="Foto de perfil"
+          class="w-64 h-64 object-cover rounded-full border border-[var(--color-neo-accent)]"
+        />
+      </div>
+      
+    </div>
+  </Card>
+</section>
+
+
+
+
+<!-- Código en vertical 
+<div class="hidden md:flex w-[80px] h-full items-center justify-center">
+  <div
+    class="text-yellow-500 text-sm font-mono font-semibold tracking-widest rotate-180 [writing-mode:vertical-rl]"
+  >
+    import Button from "../common/Button.astro";<br />
+    import Card from "../common/Card.astro";
+  </div>
+</div>
+-->

@@ -1,0 +1,59 @@
+---
+import Button from '../common/Button.astro';
+---
+
+<header class="relative pb-4">
+  <!-- Línea decorativa roja -->
+  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-[var(--color-neo-danger)] shadow-[0_2px_4px_var(--color-neo-danger)]"></div>
+
+  <!-- NAV -->
+  <nav class="container mx-auto px-4 py-4 flex flex-col gap-6 md:flex-row md:justify-between md:items-center">
+    <!-- Título -->
+    <span class="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--color-neo-accent)] text-center md:text-left">
+      PORTAFOLIO
+    </span>
+
+    <!-- Navegación -->
+    <ul class="flex flex-wrap justify-center md:justify-start gap-x-4 gap-y-2">
+      <li><Button label="Inicio" cornerFold="bottom-left" href="/" color="dark" /></li>
+      <li><Button label="Sobre mí" cornerFold="none" href="/about" color="dark" /></li>
+      <li><Button label="Proyectos" cornerFold="top-right" href="/projects" color="dark" /></li>
+    </ul>
+  </nav>
+
+<!-- HUD HORIZONTAL CON DATOS EN LÍNEA -->
+<div class="mt-4 flex justify-center">
+  <div class="flex gap-12 font-body text-sm items-center">
+    <!-- Nivel -->
+    <div class="flex items-center gap-1 text-[var(--color-neo-accent)]">
+      <span class="uppercase tracking-widest">Nivel:</span>
+      <span class="text-xl font-bold">60</span>
+    </div>
+
+    <!-- Reputación -->
+    <div class="flex items-center gap-1 text-[var(--color-neo-neon-green)]">
+      <span class="uppercase tracking-widest">Reputación:</span>
+      <span class="text-xl font-bold">55</span>
+    </div>
+
+    <!-- Peso -->
+    <div class="flex items-center gap-1 text-[var(--color-neo-danger)]">
+      <span class="uppercase tracking-widest flex items-center gap-1">
+        <!-- Icono de pesa -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M4 10h2v4H4v-4zm14 0h2v4h-2v-4zM9 8h6v2H9V8zm0 6h6v2H9v-2zm-3-1h12v2H6v-2z" />
+        </svg>
+        Peso:
+      </span>
+      <span class="text-xl font-bold">100/200</span>
+    </div>
+
+    <!-- Dinero -->
+    <div class="flex items-center gap-1">
+      <span class="uppercase tracking-widest text-[var(--color-neo-highlight)]">€$</span>
+      <span class="text-xl font-bold text-[var(--color-neo-danger)]">736647785</span>
+    </div>
+  </div>
+</div>
+
+</header>

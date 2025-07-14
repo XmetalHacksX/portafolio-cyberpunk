@@ -1,0 +1,20 @@
+---
+// VerticalLabel.astro
+const { text = "PROFILE_01" } = Astro.props;
+---
+<div
+  class="fixed top-0 right-0 h-full flex items-center justify-center pointer-events-none select-none"
+  style="width: 6rem;"
+>
+  <p
+    class="text-4xl tracking-widest text-[var(--cyberpunk-yellow)] whitespace-nowrap"
+    style="
+      font-family: var(--font-barcode);
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      user-select: none;
+    "
+  >
+    {text}
+  </p>
+</div>

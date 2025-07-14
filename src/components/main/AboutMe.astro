@@ -1,0 +1,52 @@
+---
+// SobreMi.astro
+import Card from "../common/Card.astro";
+---
+
+<section id="about-me" class="py-12">
+  <Card>
+    <div class="relative mb-6">
+      <div class="absolute top-4 left-6 right-6 flex justify-between items-center">
+        <h2
+          class="text-3xl font-bold text-[var(--color-neo-highlight)]"
+          style="font-family: var(--font-title);"
+        >
+          HACERCA DE MÍ
+        </h2>
+        <p
+          class="text-xl tracking-widest text-[var(--color-neo-highlight)] whitespace-nowrap"
+          style="font-family: var(--font-barcode);"
+        >
+          HACERCA_DE_MI_01
+        </p>
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row items-center md:items-start gap-8 mt-20">
+      <!-- Texto -->
+      <div class="md:w-1/2">
+        <p class="leading-relaxed text-white text-justify text-sm md:text-base" style="font-family: var(--font-body);">
+          Soy un apasionado del desarrollo de software, con especial interés en la creación de sistemas funcionales y landing pages atractivas. Desde que inicié mi formación técnica, descubrí una afinidad natural por resolver problemas mediante la programación, lo que me ha motivado a seguir aprendiendo y perfeccionando mis habilidades cada día.
+          <br /><br />
+          Me especializo en desarrollo web fullstack, combinando lógica de backend con una experiencia visual clara y accesible para el usuario. Me considero una persona comprometida, con iniciativa, y siempre dispuesta a enfrentar nuevos retos en el mundo de la tecnología.
+          <br /><br />
+          Mi objetivo profesional es seguir creciendo como desarrollador, ampliando mi dominio de herramientas modernas y construyendo soluciones que aporten valor real a las personas y a las empresas.
+        </p>
+      </div>
+
+      <!-- Animación -->
+      <div class="md:w-1/2 flex justify-center">
+        <lottie-player
+          src="https://assets8.lottiefiles.com/packages/lf20_sg18igu8.json"
+          background="transparent"
+          speed="1"
+          style="width: 380px; height: 380px;"
+          loop
+          autoplay
+        ></lottie-player>
+      </div>
+    </div>
+  </Card>
+
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</section>

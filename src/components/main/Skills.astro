@@ -1,0 +1,74 @@
+---
+// Astro frontmatter
+const skills = [
+  { src: "/icons/flutter-brands-solid.svg", alt: "Flutter" },
+  { src: "/icons/icons8-nodejs.svg", alt: "Node.js" },
+  { src: "/icons/icons8-astro.svg", alt: "Astro" },
+  { src: "/icons/icons8-css.svg", alt: "CSS3" },
+  { src: "/icons/icons8-html.svg", alt: "HTML5" },
+  { src: "/icons/icons8-js.svg", alt: "JavaScript" },
+  { src: "/icons/icons8-maria-db.svg", alt: "MariaDB" },
+  { src: "/icons/icons8-viento-de-cola-css.svg", alt: "Tailwind CSS" },
+  { src: "/icons/laravel-brands.svg", alt: "Laravel" },
+];
+---
+
+<section id="skills" class="text-white">
+  {skills.map(skill => (
+    <div class="skill-item" role="img" aria-label={skill.alt}>
+      <img src={skill.src} alt={skill.alt} />
+      <span class="skill-label">{skill.alt}</span>
+    </div>
+  ))}
+</section>
+
+<style>
+  #skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+    padding: 2rem 1rem;
+    color: white;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: default;
+    transition: transform 0.3s ease;
+  }
+
+  .skill-item img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+  }
+
+  .skill-item:hover {
+    transform: scale(1.15);
+  }
+
+  .skill-label {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    color: var(--foreground);
+    user-select: none;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  @media (max-width: 480px) {
+    .skill-item img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .skill-label {
+      font-size: 0.7rem;
+    }
+  }
+</style>

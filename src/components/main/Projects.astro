@@ -1,0 +1,140 @@
+---
+// Importa tu Card como antes
+import Card from "../common/Card.astro";
+
+const projects = [
+  {
+    name: "Proyecto 1",
+    role: "Sistema de chat de usuarios",
+    image: "/images/app-chat.png",
+    description: "Sistema de chat en tiempo real con los usuarios del sistema hecho con laravel 12, livewire y el uso de broadcasting con Reverb.",
+    code: "Projecto_1",
+    shape: "5",
+    url: "https://github.com/XmetalHacksX/laravel-chat-app",
+  },
+  {
+    name: "Proyecto 2",
+    role: "Aplicacion movil para usuarios de la UQROO",
+    image: "/images/app-movil.jpg",
+    description: "Aplicación móvil para estudiantes, docentes y personal administrativo, diseñada para consultar y visualizar información de distintos sistemas de la UQROO de manera rápida y eficiente.",
+    code: "Projecto_2",
+    shape: "5",
+    url: "https://github.com/XmetalHacksX/appuqroo3",
+  },
+  {
+    name: "Proyecto 3",
+    role: "Pagina web de anime simulacion",
+    image: "/images/kitzuzone-app.png",
+    description: "Simulacion de una aplicacion web donde consultas y vees la informacion de los diferentes animes con Next.js , actualmente en desarrollo.",
+    code: "Projecto_3",
+    shape: "5",
+    url: "https://github.com/XmetalHacksX/kitzuzone-Anime-Simulacion",
+  },
+  {
+    name: "Proyecto 4",
+    role: "Landing page",
+    image: "/images/landing-page-cyberpunk.png",
+    description: "Simulacion de una landing page del videojuego CyberPunk 2077, actualmente en desarrollo.",
+    code: "Projecto_4",
+    shape: "5",
+    url: "https://github.com/XmetalHacksX/landing-page-cyberpunk-2077",
+  },
+  {
+    name: "Proyecto 5",
+    role: "Dashboard con react",
+    image: "/images/next-dashboard.png",
+    description: "Curso en proceso para la creacion de un dashboard utiliznado la tecnologia react.",
+    code: "Projecto_5",
+    shape: "5",
+    url: "https://github.com/XmetalHacksX/Curso-Next-Js-15",
+  },
+  {
+    name: "Proyecto 6",
+    role: "Sistema de asientos para la bibloteca de la UQROO",
+    image: "/images/proyecto-asientos.png",
+    description: "Sistema de reservacion de asientos en las instalaciones de la UQROO",
+    code: "Projecto_6",
+    shape: "5",
+    url: "https://github.com/XmetalHacksX/sistema-asientos-uqroo",
+  },
+  {
+    name: "Proyecto 7",
+    role: "Sistema de compra y venta de antojitos",
+    image: "/images/sistema-pos.png",
+    description: "Sistema donde el cliente puede ordenar los diferentes antojitos que ofrece la loncheria y otro sistema donde se ve los pedidos en cocina. Aun incompleto",
+    code: "Projecto_7",
+    shape: "5",
+    url: "https://github.com/XmetalHacksX/Sistema-POS-Loncheria",
+  },
+];
+
+---
+
+<section id="projects" class="py-12">
+  <Card shape="5">
+    <div class="space-y-8">
+      <div class="flex justify-between items-center px-6 pt-4">
+        <h2
+          class="text-3xl font-bold text-[var(--color-neo-highlight)]"
+          style="font-family: var(--font-title);"
+        >
+          EVIDENCIA DE TRABAJO
+        </h2>
+        <p
+          class="text-xl tracking-widest text-[var(--color-neo-highlight)] whitespace-nowrap"
+          style="font-family: var(--font-barcode);"
+        >
+          EVIDENCIA_DE_TRABAJO_01
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 px-2 pb-4">
+        {projects.map((project, index) => (
+          <Card shape={project.shape} key={project.code}>
+            <div class="min-h-[420px] flex flex-col justify-between pt-6 px-4 pb-4">
+              <div class="flex justify-between items-center mb-4 flex-wrap gap-x-2">
+                <h4 class="text-xl font-bold text-[var(--color-neo-highlight)]" style="font-family: var(--font-title);">
+                  {project.name}
+                </h4>
+                <p class="text-md tracking-widest text-[var(--color-neo-highlight)] whitespace-nowrap" style="font-family: var(--font-barcode);">
+                  {project.code}
+                </p>
+              </div>
+
+              <!-- Imagen con modal -->
+              <button
+  onclick={`document.getElementById('modal-${index}')?.showModal()`}
+  class="mb-4 relative h-48 w-full rounded-md overflow-hidden border border-[var(--color-neo-accent)] block hover:opacity-80 transition-opacity duration-200"
+>
+
+                <img src={project.image} alt={project.name} class="object-cover w-full h-full" />
+              </button>
+
+              <!-- Modal -->
+              <dialog id={`modal-${index}`} class="rounded-lg bg-black/95 max-w-3xl w-full p-4">
+                <form method="dialog" class="text-right mb-2">
+                  <button class="text-white hover:text-red-400 text-sm">Cerrar ✕</button>
+                </form>
+                <img src={project.image} alt={project.name} class="w-full h-auto rounded-md mb-4" />
+              </dialog>
+
+              <p class="italic text-[var(--color-neo-accent)] text-sm mb-1">{project.role}</p>
+              <p class="text-[var(--color-neo-foreground)] mb-4" style="font-family: var(--font-body);">
+                {project.description}
+              </p>
+
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-auto bg-[var(--color-neo-accent)] hover:bg-[var(--color-neo-highlight)] text-black font-semibold px-4 py-2 rounded transition-colors duration-200 text-center"
+              >
+                Ver repositorio
+              </a>
+            </div>
+          </Card>
+        ))}
+      </div>
+    </div>
+  </Card>
+</section>

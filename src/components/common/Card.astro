@@ -1,0 +1,91 @@
+---
+const { shape = '1' } = Astro.props;
+---
+
+<div class={`card-outer card-shape-${shape}`}>
+  <div class="card-inner">
+    <slot />
+  </div>
+</div>
+
+<style>
+.card-outer {
+  background-color: var(--color-neo-accent);
+  display: block;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 0 20px rgba(74, 214, 255, 0.3);
+  padding: 3px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.card-inner {
+  background-color: #18181b;
+  color: white;
+  border-radius: 16px;
+  position: relative;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+/* RESPONSIVE PADDING */
+@media (max-width: 768px) {
+  .card-inner {
+    padding: 1rem;
+  }
+}
+
+/* Clip-path Shapes */
+.card-shape-1 {
+  clip-path: polygon(30px 0%, 100% 0, 100% 100%, 0% 100%, 0% 30px);
+}
+.card-shape-1 .card-inner {
+  clip-path: polygon(28px 0%, calc(100% - 2px) 0, calc(100% - 2px) 100%, 0% 100%, 0% 28px);
+}
+
+.card-shape-2 {
+  clip-path: polygon(30px 0%, 100% 0%, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0% 100%, 0% 30px);
+}
+.card-shape-2 .card-inner {
+  clip-path: polygon(28px 0%, calc(100% - 2px) 0%, calc(100% - 2px) calc(100% - 28px), calc(100% - 28px) 100%, 0% 100%, 0% 28px);
+}
+
+.card-shape-3 {
+  clip-path: polygon(30px 0%, 100% 0%, 100% calc(100% - 30px), calc(100% - 30px) 100%, 30px 100%, 0% calc(100% - 30px), 0% 30px);
+}
+.card-shape-3 .card-inner {
+  clip-path: polygon(28px 0%, calc(100% - 2px) 0%, calc(100% - 2px) calc(100% - 28px), calc(100% - 28px) 100%, 28px 100%, 0% calc(100% - 28px), 0% 28px);
+}
+
+.card-shape-4 {
+  clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 30px 100%, 0 calc(100% - 30px));
+}
+.card-shape-4 .card-inner {
+  clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 28px 100%, 0 calc(100% - 28px));
+}
+
+.card-shape-5 {
+  clip-path: polygon(20px 0, calc(100% - 20px) 0, 100% 20px, 100% calc(100% - 20px), calc(100% - 20px) 100%, 20px 100%, 0 calc(100% - 20px), 0 20px);
+}
+.card-shape-5 .card-inner {
+  clip-path: polygon(18px 0, calc(100% - 18px) 0, 100% 18px, 100% calc(100% - 18px), calc(100% - 18px) 100%, 18px 100%, 0 calc(100% - 18px), 0 18px);
+}
+
+.card-shape-6 {
+  clip-path: polygon(0 0, 100% 0, 100% 30px, calc(100% - 20px) 30px, calc(100% - 20px) calc(100% - 30px), 100% calc(100% - 30px), 100% 100%, 0 100%, 0 calc(100% - 30px), 20px calc(100% - 30px), 20px 30px, 0 30px);
+}
+.card-shape-6 .card-inner {
+  clip-path: polygon(0 0, 100% 0, 100% 28px, calc(100% - 18px) 28px, calc(100% - 18px) calc(100% - 28px), 100% calc(100% - 28px), 100% 100%, 0 100%, 0 calc(100% - 28px), 18px calc(100% - 28px), 18px 28px, 0 28px);
+}
+
+.card-shape-7 {
+  clip-path: polygon(20% 0%, 80% 0%, 100% 30%, 100% 70%, 80% 100%, 20% 100%, 0% 70%, 0% 30%);
+}
+.card-shape-7 .card-inner {
+  clip-path: polygon(18% 0%, 82% 0%, 100% 28%, 100% 72%, 82% 100%, 18% 100%, 0% 72%, 0% 28%);
+}
+</style>
